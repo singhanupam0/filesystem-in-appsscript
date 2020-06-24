@@ -73,6 +73,7 @@ function testFunctions() {
   vba_file_run_all_tests();
   vba_folder_run_all_tests();
   file_system_run_all_tests();
+  vba_textstream_run_all_tests();
 }
 
 function setupTestEnvironment() {
