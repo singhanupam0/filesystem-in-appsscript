@@ -63,7 +63,10 @@ function generateTestReport() {
 }
 
 function testFunctions() {
+<<<<<<< HEAD:FileSystem/test_setup.js
   FileMapper.clearAllMappingsInConfig();
+=======
+>>>>>>> 715d619... FileSystem: File Handling APIs:FileSystem/TestSetup.js
   Workbook.setActiveWorkbookPath('c:\\user\\desktop');
   setupTestEnvironment();
   workbook_run_all_tests();
@@ -78,16 +81,8 @@ function testFunctions() {
 function setupTestEnvironment() {
   var folder1 = 'c:\\User\\Desktop\\folder1';
   var folder2 = 'c:\\User\\Desktop\\folder2';
-  try {
-    FileMapper.deleteFolder(folder1);
-  } catch (e) {
-    // Do Nothing
-  }
-  try {
-    FileMapper.deleteFolder(folder2);
-  } catch (e) {
-    // Do Nothing
-  }
+  deleteFolderIfExists(folder1);
+  deleteFolderIfExists(folder2);
   var originalFolder1 = 'c:\\User\\Desktop\\original\\folder1';
   var originalFolder2 = 'c:\\User\\Desktop\\original\\folder2';
   FileMapper.copyFolder(originalFolder1, 'c:\\User\\Desktop');
