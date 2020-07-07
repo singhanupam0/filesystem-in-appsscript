@@ -62,17 +62,20 @@ function generateTestReport() {
   DriveApp.createFile(pdf).setName(fileName);
 }
 
+
+
 function testFunctions() {
-  FileMapper.clearAllMappingsInConfig();
-  Workbook.setActiveWorkbookPath('c:\\user\\desktop');
+  
   setupTestEnvironment();
-  workbook_run_all_tests();
-  file_io_run_all_tests();
+//  workbook_run_all_tests();
+//  file_io_run_all_tests();
   file_mapper_run_all_tests();
-  directory_manager_run_all_tests();
+//  directory_manager_run_all_tests();
 }
 
 function setupTestEnvironment() {
+  FileMapper.clearAllMappingsInConfig();
+Workbook.setActiveWorkbookPath('c:\\user\\desktop');
   var folder1 = 'c:\\User\\Desktop\\folder1';
   var folder2 = 'c:\\User\\Desktop\\folder2';
   try {
@@ -177,7 +180,7 @@ var currentRunningTestModule = null;
  */
 function getFileSystemTests() {
   var FileSystemTests = {
-    setup: setupTestEnvironment,
+//    setup: setupTestEnvironment,
     tests: {'File Mapper': fileMapperTests}
   };
   return FileSystemTests;
